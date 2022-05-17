@@ -32,8 +32,13 @@ function App() {
         name: "",
         offset: "",
       });
-      console.log({ watch });
     }
+  };
+
+  const handleDelete = (e, id) => {
+    e.preventDefault();
+    const newWatch = watch.filter((el) => el.id !== id);
+    setWatch(newWatch);
   };
 
   return (
@@ -46,7 +51,7 @@ function App() {
       />
       <div className="watches">
         {watch.map((el) => (
-          <Watch data={el} key={el.id} />
+          <Watch data={el} key={el.id} onDelete={handleDelete} id={el.id} />
         ))}
       </div>
     </main>

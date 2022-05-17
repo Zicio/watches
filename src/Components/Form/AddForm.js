@@ -1,6 +1,7 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import classNames from "classnames";
+import PropTypes from "prop-types";
 
 const AddForm = (props) => {
   const { name, offset, onChange, onSubmit } = props;
@@ -36,7 +37,8 @@ const AddForm = (props) => {
         <Form.Control
           type="number"
           name="offset"
-          max="23"
+          max="12"
+          min="-12"
           value={offset}
           onChange={handleChange}
           required
@@ -47,6 +49,13 @@ const AddForm = (props) => {
       </Button>
     </Form>
   );
+};
+
+AddForm.propTypes = {
+  name: PropTypes.string.isRequired,
+  offset: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default AddForm;
