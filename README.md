@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/nx6yx5hmhh6g7cq0?svg=true)](https://ci.appveyor.com/project/Zicio/watches)
+
 [Ссылка на GP](https://zicio.github.io/watches/)
 
 [Ссылка на задание](https://github.com/netology-code/ra16-homeworks/tree/master/lifecycle-http/watches)
