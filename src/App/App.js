@@ -1,13 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import AddForm from "../Components/Form/AddForm";
 import Watch from "../Components/Watch/Watch";
 import { useState } from "react";
-import moment from "moment";
-import "moment/locale/ru";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
-  moment.locale("ru");
   const [form, setForm] = useState({
     name: "",
     offset: "",
@@ -25,8 +23,9 @@ function App() {
     e.preventDefault();
     if (form.name && form.offset) {
       const newWatch = {
+        id: uuidv4(),
         name: form.name,
-        time: moment().add(form.offset, "hours").format("LTS"),
+        offset: form.offset,
       };
       setWatch((prevWatch) => [...prevWatch, newWatch]);
       setForm({
@@ -47,7 +46,7 @@ function App() {
       />
       <div className="watches">
         {watch.map((el) => (
-          <Watch data={el} key={uuidv4()} />
+          <Watch data={el} key={el.id} />
         ))}
       </div>
     </main>

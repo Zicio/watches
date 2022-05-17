@@ -1,0 +1,43 @@
+$color-display: greenyellow;
+
+.watch {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  border: 1px solid black;
+  padding: 10px;
+  position: relative;
+
+  .watch__name {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .watch__dipslay {
+    border: 2px solid $color-display;
+    padding: 5px;
+    background-color: black;
+    color: $color-display;
+  }
+
+  .watch__delete {
+    all: unset;
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    font-size: small;
+    text-align: center;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  .watch__delete:hover {
+    background-color: black;
+    color: red;
+  }
+}
